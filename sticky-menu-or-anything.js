@@ -26,10 +26,11 @@
          // Cloned element should always have same left position and width as original element.     
            orgElement = $('.original');
            coordsOrgElement = orgElement.offset();
+           leftOrgElement = coordsOrgElement.left;  
            widthOrgElement = orgElement.width();
-           posLeft = coordsOrgElement.left;     
+  
        
-         jQuery('.cloned').css('left',posLeft+'px').css('top',stickyTop+'px').css('width',widthOrgElement+'px').show();
+         jQuery('.cloned').css('left',leftOrgElement+'px').css('top',stickyTop+'px').css('width',widthOrgElement+'px').show();
          jQuery('.original').css('visibility','hidden');
        } else {
          // not scrolled past the menu; only show the original menu.
