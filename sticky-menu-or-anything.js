@@ -24,10 +24,10 @@
          // scrolled past the menu; only show the cloned, sticky menu.
          
          // Cloned element should always have same left position and width as original element.     
-         orgElement = $('.original');
-         coordsOrgElement = orgElement.offset();
-         widthOrgElement = orgElement.width();
-         posLeft = coordsOrgElement.left;     
+           orgElement = $('.original');
+           coordsOrgElement = orgElement.offset();
+           widthOrgElement = orgElement.width();
+           posLeft = coordsOrgElement.left;     
        
          jQuery('.cloned').css('left',posLeft+'px').css('top',stickyTop+'px').css('width',widthOrgElement+'px').show();
          jQuery('.original').css('visibility','hidden');
