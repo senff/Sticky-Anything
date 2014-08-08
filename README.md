@@ -51,7 +51,7 @@ NOTES AND RESTRICTIONS AND BUGS AND STUFF
 
 - When you attach "stickThis" to your element of choice, make sure that the selector applies to only ONE element on the page. If it applies to more than one, nothing will get sticky (even IF this would be enabled, things would just get in eachother's way at the top of the page). Hence, only use selectors that are unique on the page.
 
-- Although this plugin works fine even down to IE7, it will not work if you try to stick any HTML5 elements (`<NAV>`, `<HEADER>`, `<ARTICLE>`, etc, not even when you use a polyfill like HTML5shiv or Modernizr, and not even when you just use the classname and don't include the element name. You can only stick HTML5 elements in IE9 and up.
+- Although this plugin works fine even down to IE7, it will not work if you try to stick any HTML5 elements (`<NAV>`, `<HEADER>`, `<ARTICLE>`, etc), not even when you use a polyfill like HTML5shiv or Modernizr, and not even when you just use the classname and don't include the element name. You can only stick HTML5 elements in IE9 and up.
 
 
 
