@@ -28,8 +28,7 @@ In your custom jQuery calls, attach the function "stickThis" to the element you 
     $('.main-menu').stickThis();
 
 
-Options
--------
+### Options
 
 Actually, that should be called "Option" as there is only ONE. It's possible that you don't want your element to be sticky EXACTLY at the top of the page, but a little lower (so there is room between the "ceiling" and your element). In this case, add the necessary space as an option named "top", e.g.:
 
