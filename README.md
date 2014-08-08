@@ -19,7 +19,7 @@ The Sticky Anything plugin allows you to make any element on your page "sticky" 
 USAGE
 -----
 
-Load the JS file in your document after you load your jQuery library and before your custom jQuery code/calls:
+Put the minified JS file *jq-sticky-anything.min.js* in your JS folder (or wherever you like, of course) and call it in your document -- after you load your jQuery library and before your custom jQuery code/calls:
 
     <script src="/path/to/plugin/jq-sticky-anything.min.js"></script>
 
@@ -48,7 +48,7 @@ If you use a negative number, the element will be sticky ABOVE the "ceiling", an
 NOTES AND RESTRICTIONS AND BUGS AND STUFF
 -----------------------------------------
 
-- Recommended use is to call jq-sticky-anything.min.js. The other JS file, jq-sticky-anything.js, is functional and works fine too, but is only included for study purposes, to show more clearly what the code does.
+- Recommended use is to call *jq-sticky-anything.min.js*. The other JS file, *jq-sticky-anything.js*, is functional and works fine too, but is only included for study purposes, to show more clearly what the code does.
 
 - When you attach "stickThis" to your element of choice, make sure that the selector applies to only ONE element on the page. If it applies to more than one, nothing will get sticky (even IF this would be enabled, things would just get in eachother's way at the top of the page). Hence, only use selectors that are unique on the page.
 
