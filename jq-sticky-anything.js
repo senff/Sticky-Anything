@@ -22,7 +22,7 @@
       // $(this).css('border','solid 3px #00ff00');
     } else {
       // Create a clone of the menu, right next to original (in the DOM).
-      $(this).addClass('original').clone().insertAfter(this).addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
+      $(this).addClass('original').clone().insertAfter(this).addClass('cloned').css('position','fixed').css('top',settings.top+'px').css('margin-top','0').css('margin-left','0').css('z-index','500').removeClass('original').hide();
       checkElement = setInterval(function(){stickIt(settings.top)},10);
     }
 
