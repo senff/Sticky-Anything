@@ -2,7 +2,7 @@ STICKY ANYTHING - JQUERY PLUGIN
 ============================================
 
 - Author: Mark Senff
-- Version: 1.0
+- Version: 1.01
 - Plugin URL: https://github.com/senff/Sticky-Anything
 - Author URL: http://www.senff.com
 - License: GNU General Public License v2 or later
@@ -58,8 +58,3 @@ NOTES AND RESTRICTIONS AND BUGS AND STUFF
 LICENSE DETAILS
 ---------------
 The GPL license of Sticky Anything grants you the right to use, study, share (copy), modify and (re)distribute the software, as long as these license terms are retained. 
-
-
-
-
-
