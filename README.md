@@ -54,6 +54,15 @@ NOTES AND RESTRICTIONS AND BUGS AND STUFF
 - Although this plugin works fine even down to IE7, it will not work if you try to stick any HTML5 elements (`<NAV>`, `<HEADER>`, `<ARTICLE>`, etc), not even when you use a polyfill like HTML5shiv or Modernizr, and not even when you just use the classname and don't include the element name. You can only stick HTML5 elements in IE9 and up.
 
 
+CHANGELOG
+---------
+
+= 1.0.1 =
+* Fix for top position and left margin.
+
+= 1.0 =
+* Initial release
+
 
 LICENSE DETAILS
 ---------------
