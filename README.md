@@ -2,7 +2,7 @@ STICKY ANYTHING - JQUERY PLUGIN
 ============================================
 
 - Author: Mark Senff
-- Version: 1.01
+- Version: 1.1
 - Plugin URL: https://github.com/senff/Sticky-Anything
 - Author URL: http://www.senff.com
 - License: GNU General Public License v2 or later
@@ -30,7 +30,22 @@ In your custom jQuery calls, attach the function "stickThis" to the element you 
 
 ### Options
 
-Actually, that should be called "Option" as there is only ONE. It's possible that you don't want your element to be sticky EXACTLY at the top of the page, but a little lower (so there is room between the "ceiling" and your element). In this case, add the necessary space as an option named "top", e.g.:
+#### General
+
+The following default options are provided by the plugin. None of them are required:
+
+	$('.main-menu').stickThis({
+        top: 		0,		// top position of sticky element, measured from 'ceiling'
+        zindex: 	1,		// z-index value of sticky element
+        debugmode:	false	// when true, errors will be logged to console
+    });
+
+More information below.
+
+
+#### Top position
+
+It's possible that you don't want your element to be sticky EXACTLY at the top of the page, but a little lower (so there is room between the "ceiling" and your element). In this case, add the necessary space as an option named "top", e.g.:
 
     $('.main-menu').stickThis({
         top:80
@@ -43,19 +58,45 @@ If you use a negative number, the element will be sticky ABOVE the "ceiling", an
     });
 
 
+#### Z-index
+
+If your page has any elements that may obscure/overlap your sticky element, you can try to overrule that by assigning it a particular Z-index value, e.g.:
+
+    $('.main-menu').stickThis({
+        zindex:100
+    });
+
+Don't be lazy by assigning a value of 99999 -- that's definitely like shooting a mosquito with a bazooka. Although it'll probably work, it's often unnecessary. Try to find the Z-index of the element(s) that obscure(s) your sticky element, and add a few to it for your sticky one.
+
+
+#### Debug mode
+
+If you install the plugin and you see that your element is not sticky as you expected, it's usually because the selector you used either doesn't exist on your page, or there's more than one element with that selector. If that's the case but you really don't know what's going on, turn on debug mode and an error message will be displayed in your console:
+
+    $('.main-menu').stickThis({
+        debugmode:true
+    });
+
+Needless to say that you should never have this option set to TRUE in regular production environments.
+
+
 
 NOTES AND RESTRICTIONS AND BUGS AND STUFF
 -----------------------------------------
 
 - Recommended use is to call *jq-sticky-anything.min.js*. The other JS file, *jq-sticky-anything.js*, is functional and works fine too, but is only included for study purposes, to show more clearly what the code does.
 
-- When you attach "stickThis" to your element of choice, make sure that the selector applies to only ONE element on the page. If it applies to more than one, nothing will get sticky (even IF this would be enabled, things would just get in eachother's way at the top of the page). Hence, only use selectors that are unique on the page.
+- When you attach "stickThis" to your element of choice, make sure that the selector applies to only ONE element on the page. If it applies to more than one, nothing will get sticky (even IF this would be enabled, things would just get in eachother's way at the top of the page). Hence, only use selectors that are unique on the page. See "Debug mode" above to find out why an element might not be sticky.
 
 - Although this plugin works fine even down to IE7, it will not work if you try to stick any HTML5 elements (`<NAV>`, `<HEADER>`, `<ARTICLE>`, etc), not even when you use a polyfill like HTML5shiv or Modernizr, and not even when you just use the classname and don't include the element name. You can only stick HTML5 elements in IE9 and up.
 
 
 CHANGELOG
 ---------
+
+= 1.1 =
+* Added debug option
+* Added Z-index option
 
 = 1.0.1 =
 * Fix for top position and left margin.
