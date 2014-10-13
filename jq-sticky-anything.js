@@ -9,6 +9,8 @@
     var settings = $.extend({
       // Default
       top: 0,
+      minscreenwidth: 0, 
+      maxscreenwidth: 99999,       
       zindex: 1,
       debugmode: false
       }, options );
@@ -31,19 +33,28 @@
     } else {
       // Create a clone of the menu, right next to original (in the DOM).
       $(this).addClass('original').clone().insertAfter(this).addClass('cloned').css('position','fixed').css('top',settings.top+'px').css('margin-top','0').css('margin-left','0').css('z-index',settings.zindex).removeClass('original').hide();
-      checkElement = setInterval(function(){stickIt(settings.top)},10);
+      checkElement = setInterval(function(){stickIt(settings.top,settings.minscreenwidth,settings.maxscreenwidth)},10);
     }
 
     return this;
   };
 
 
-function stickIt(stickyTop) {
+function stickIt(stickyTop,minwidth,maxwidth) {
 
   var orgElementPos = $('.original').offset();
   orgElementTop = orgElementPos.top;
 
-  if ($(window).scrollTop() >= (orgElementTop - stickyTop)) {
+  // Calculating actual viewport width
+  var e = window, a = 'inner';
+  if (!('innerWidth' in window )) {
+    a = 'client';
+    e = document.documentElement || document.body;
+  }
+  viewport = e[ a+'Width' ];
+
+  if (($(window).scrollTop() >= (orgElementTop - stickyTop)) && (viewport >= minwidth) && (viewport <= maxwidth)) {
+
     // scrolled past the original position; now only show the cloned, sticky element.
 
     // Cloned element should always have same left position and width as original element.
