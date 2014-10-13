@@ -2,7 +2,7 @@ STICKY ANYTHING - JQUERY PLUGIN
 ============================================
 
 - Author: Mark Senff
-- Version: 1.1
+- Version: 1.1.1
 - Plugin URL: https://github.com/senff/Sticky-Anything
 - Author URL: http://www.senff.com
 - License: GNU General Public License v2 or later
@@ -90,9 +90,14 @@ NOTES AND RESTRICTIONS AND BUGS AND STUFF
 
 - Although this plugin works fine even down to IE7, it will not work if you try to stick any HTML5 elements (`<NAV>`, `<HEADER>`, `<ARTICLE>`, etc), not even when you use a polyfill like HTML5shiv or Modernizr, and not even when you just use the classname and don't include the element name. You can only stick HTML5 elements in IE9 and up.
 
+- If you need to use this in your WordPress site, I recommend using the WordPress plugin that you can download directly from the WP plugin repository: https://wordpress.org/plugins/sticky-menu-or-anything-on-scroll
+
 
 CHANGELOG
 ---------
+
+= 1.1.1 =
+* Fixed width detection bug (thanks @sambrannon)
 
 = 1.1 =
 * Added debug option
