@@ -9,7 +9,7 @@
     var settings = $.extend({
       // Default
       top: 0,
-      zindex: 1, 
+      zindex: 1,
       debugmode: false
       }, options );
 
@@ -27,7 +27,7 @@
       // $(this).css('border','solid 3px #00ff00');
       if(settings.debugmode == true) {
         console.error('STICKY ANYTHING DEBUG: There is more than one element with the class/ID you selected. You can only make ONE element sticky.');
-      }      
+      }
     } else {
       // Create a clone of the menu, right next to original (in the DOM).
       $(this).addClass('original').clone().insertAfter(this).addClass('cloned').css('position','fixed').css('top',settings.top+'px').css('margin-top','0').css('margin-left','0').css('z-index',settings.zindex).removeClass('original').hide();
@@ -41,18 +41,18 @@
 function stickIt(stickyTop) {
 
   var orgElementPos = $('.original').offset();
-  orgElementTop = orgElementPos.top;               
+  orgElementTop = orgElementPos.top;
 
   if ($(window).scrollTop() >= (orgElementTop - stickyTop)) {
     // scrolled past the original position; now only show the cloned, sticky element.
 
-    // Cloned element should always have same left position and width as original element.     
+    // Cloned element should always have same left position and width as original element.
     orgElement = $('.original');
     coordsOrgElement = orgElement.offset();
-    leftOrgElement = coordsOrgElement.left;  
-    widthOrgElement = orgElement.width();
+    leftOrgElement = coordsOrgElement.left;
+    widthOrgElement = orgElement.css('width');
 
-    $('.cloned').css('left',leftOrgElement+'px').css('top',stickyTop+'px').css('width',widthOrgElement+'px').show();
+    $('.cloned').css('left',leftOrgElement+'px').css('top',stickyTop+'px').css('width',widthOrgElement).show();
     $('.original').css('visibility','hidden');
   } else {
     // not scrolled past the menu; only show the original menu.
