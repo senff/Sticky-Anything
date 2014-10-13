@@ -82,7 +82,7 @@ If you want your main menu to behave normally ("not sticky") for screens/widths 
 This setting can be combined with the Minimum screen width, so that stickiness can occur between certain screen widths only, for example:
 
     $('.main-menu').stickThis({
-        maxscreenwidth:700
+        maxscreenwidth:700,
         maxscreenwidth:1600
     });
 
