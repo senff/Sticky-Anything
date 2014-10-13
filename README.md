@@ -2,7 +2,7 @@ STICKY ANYTHING - JQUERY PLUGIN
 ============================================
 
 - Author: Mark Senff
-- Version: 1.1.1
+- Version: 1.1.3
 - Plugin URL: https://github.com/senff/Sticky-Anything
 - Author URL: http://www.senff.com
 - License: GNU General Public License v2 or later
@@ -36,6 +36,8 @@ The following default options are provided by the plugin. None of them are requi
 
 	$('.main-menu').stickThis({
         top: 		0,		// top position of sticky element, measured from 'ceiling'
+        minscreenwidth:	0,		// element will not be sticky when viewport width smaller than this
+        maxscreenwidth: 999999,		// element will not be sticky when viewport width larger than this 
         zindex: 	1,		// z-index value of sticky element
         debugmode:	false	// when true, errors will be logged to console
     });
@@ -55,6 +57,33 @@ If you use a negative number, the element will be sticky ABOVE the "ceiling", an
 
     $('.main-menu').stickThis({
         top:-35
+    });
+
+#### Minimum screen width
+
+If you don't want your element to be sticky when the viewport is smaller than a certain width (for example, you don't want your menu to be sticky for mobile devices, or your site is responsive so that a smaller screen width changes the design enough to make stickiness unnecessary), you can add a minimum screen width. 
+
+If you want your main menu to behave normally ("not sticky") for screens/widths smaller than 700 pixels:
+
+    $('.main-menu').stickThis({
+        minscreenwidth:700
+    });
+
+#### Maximum screen width
+
+If you don't want your element to be sticky when the viewport is larger than a certain width (for example, you don't want your menu to be sticky for desktop devices while still use it for mobile devices, or your site is responsive so that a wider screen width changes the design enough to make stickiness unnecessary), you can add a maximum screen width. 
+
+If you want your main menu to behave normally ("not sticky") for screens/widths wider than 1600 pixels:
+
+    $('.main-menu').stickThis({
+        maxscreenwidth:1600
+    });
+
+This setting can be combined with the Minimum screen width, so that stickiness can occur between certain screen widths only, for example:
+
+    $('.main-menu').stickThis({
+        maxscreenwidth:700
+        maxscreenwidth:1600
     });
 
 
@@ -95,6 +124,10 @@ NOTES AND RESTRICTIONS AND BUGS AND STUFF
 
 CHANGELOG
 ---------
+
+= 1.1.3 =
+* Added min/max screen width
+* Synced version number with WordPress plugin version
 
 = 1.1.1 =
 * Fixed width detection bug (thanks @sambrannon)
