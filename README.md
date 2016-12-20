@@ -2,7 +2,7 @@ STICKY ANYTHING - JQUERY PLUGIN
 ============================================
 
 - Author: Mark Senff
-- Version: 1.1.3
+- Version: 2.0.1
 - Plugin URL: https://github.com/senff/Sticky-Anything
 - Author URL: http://www.senff.com
 - License: GNU General Public License v2 or later
@@ -35,11 +35,12 @@ In your custom jQuery calls, attach the function "stickThis" to the element you 
 The following default options are provided by the plugin. None of them are required:
 
 	$('.main-menu').stickThis({
-        top: 		0,		// top position of sticky element, measured from 'ceiling'
-        minscreenwidth:	0,		// element will not be sticky when viewport width smaller than this
+        top:            0,		    // top position of sticky element, measured from 'ceiling'
+        minscreenwidth: 0,		    // element will not be sticky when viewport width smaller than this
         maxscreenwidth: 999999,		// element will not be sticky when viewport width larger than this 
-        zindex: 	1,		// z-index value of sticky element
-        debugmode:	false	// when true, errors will be logged to console
+        zindex:         1,		    // z-index value of sticky element
+        debugmode:      false,      // when true, errors will be logged to console
+        pushup:         ''          // another (unique) element on the page that will 'push up' the sticky element
     });
 
 More information below.
@@ -109,6 +110,14 @@ If you install the plugin and you see that your element is not sticky as you exp
 Needless to say that you should never have this option set to TRUE in regular production environments.
 
 
+#### Pushup
+
+There are situations where you want to "unstick" your sticky element again, when another element (lower on the page) comes into view. A good example of this would be a page footer, that you don't want to be obscured by your sticky element. The so-called Push-up element is what you choose to push your sticky element up again (hence the name "push-up element"!). Usage is as follows:
+
+    $('.sidebar').stickThis({
+        pushup:'.page-footer';
+    });
+ 
 
 NOTES AND RESTRICTIONS AND BUGS AND STUFF
 -----------------------------------------
@@ -124,6 +133,10 @@ NOTES AND RESTRICTIONS AND BUGS AND STUFF
 
 CHANGELOG
 ---------
+
+= 2.0.1 =
+* Changed fundamental method from creating a clone and making that sticky, to making the same actual element sticky
+* Added push-up element
 
 = 1.1.3 =
 * Added min/max screen width
