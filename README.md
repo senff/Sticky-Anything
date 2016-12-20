@@ -15,7 +15,7 @@ DESCRIPTION
 The Sticky Anything plugin allows you to make any element on your page "sticky" as soon as it hits the top of the page when you scroll down. Although this is commonly used to keep menus at the top of your page, the plugin actually allows you to make ANY element sticky (such as a Call To Action box, a logo, etc.)
 
 
-
+  
 USAGE
 -----
 
