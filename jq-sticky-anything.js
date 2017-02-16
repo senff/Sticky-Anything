@@ -62,10 +62,13 @@
       }
 
       createPlaceholder();
-      checkElement = setInterval(function(){stickIt(settings.top,settings.minscreenwidth,settings.maxscreenwidth,settings.zindex,settings.pushup,orgAssignedStyles,orgInlineStyles)},10);
-
+      this.timeoutId = setInterval(function(){stickIt(settings.top,settings.minscreenwidth,settings.maxscreenwidth,settings.zindex,settings.pushup,orgAssignedStyles,orgInlineStyles)},10);
     }
 
+    this.unstick = function(){
+      if (this.timeoutId){ clearTimeout(this.timeoutId); }
+    };
+    
     return this;
   };
 
