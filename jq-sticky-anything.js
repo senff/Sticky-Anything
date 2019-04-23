@@ -11,6 +11,8 @@
       top: 0,
       minscreenwidth: 0, 
       maxscreenwidth: 99999, 
+      minscreenheight: 0, 
+      maxscreenheight: 99999, 
       zindex: 1, 
       debugmode: false,
       pushup: ''
@@ -62,7 +64,7 @@
       }
 
       createPlaceholder();
-      checkElement = setInterval(function(){stickIt(settings.top,settings.minscreenwidth,settings.maxscreenwidth,settings.zindex,settings.pushup,orgAssignedStyles,orgInlineStyles)},10);
+      checkElement = setInterval(function(){stickIt(settings.top,settings.minscreenwidth,settings.maxscreenwidth,settings.minscreenheight,settings.maxscreenheight,settings.zindex,settings.pushup,orgAssignedStyles,orgInlineStyles)},10);
 
     }
 
@@ -70,7 +72,7 @@
   };
 
 
-  function stickIt(stickyTop,minwidth,maxwidth,stickyZindex,pushup,originalAssignedStyles,originalInlineStyles) {
+  function stickIt(stickyTop,minwidth,maxwidth,minheight,maxheight,stickyZindex,pushup,originalAssignedStyles,originalInlineStyles) {
 
     // We need to check the position of the ACTIVE element to determine if we've scrolled enough.
     // This is the original one when it's not sticky, but when it's sticky, it's the placeholder.
@@ -90,9 +92,10 @@
       a = 'client';
       e = document.documentElement || document.body;
     }
-    viewport = e[ a+'Width' ];
+    viewportX = e[a + 'Width'];
+    viewportY = e[a + 'Height'];
 
-    if (($(window).scrollTop() >= (orgElementTop - stickyTop)) && (viewport >= minwidth) && (viewport <= maxwidth)) {
+    if (($(window).scrollTop() >= (orgElementTop - stickyTop)) && (viewportX >= minwidth) && (viewportX <= maxwidth) && (viewportY >= minheight) && (viewportY <= maxheight)) {
 
       // We've scrolled PAST the original position; this is where we need to make the element sticky.
 
